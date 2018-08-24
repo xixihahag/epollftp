@@ -50,7 +50,7 @@
 
 - 各文件依赖图
 
-  ![IMG_20180824_093728](pdsoe2moe.bkt.clouddn.com/IMG_20180824_093728.jpg)
+  ![IMG_20180824_093728](http://pdsoe2moe.bkt.clouddn.com/IMG_20180824_093728.jpg)
 
 手画的，画的有点烂，但是能看清哈。
 
