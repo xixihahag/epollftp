@@ -1,8 +1,18 @@
 #include "my_unp.h"
 #include "error.h"
 
-int network_init(int key, char *ipaddress){
+int setnonblocking(int sockfd){
+  int opts;
+  if( (opts = fcntl(sockfd, F_GETFL)) < 0)
+    err_sys("fctnl get error");
+  if( fcntl(sockfd, F_SETFL, opts | O_NONBLOCK) < 0)
+    err_sys("fctnl set error");
+}
+
+int network_init(int key, char *ipaddress, int isnoblock){
   int listenfd = socket(AF_INET, SOCK_STREAM, 0);
+  if(isnoblock == 1)
+    setnonblocking(listenfd);
   struct sockaddr_in servaddr;
   bzero(&servaddr, sizeof(servaddr));
   servaddr.sin_family = AF_INET;

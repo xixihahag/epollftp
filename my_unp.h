@@ -32,7 +32,8 @@
 #define FALSE 0
 #define CMDSIZE 1024
 
-int network_init(int, char *);
+int network_init(int, char *, int);
 size_t Read(int, void*, size_t);
 void Write(int, void*, size_t);
 int Accept(int, SA*, socklen_t*);
+int setnonblocking(int);

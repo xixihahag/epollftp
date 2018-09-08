@@ -15,6 +15,7 @@ int servjudge(data *mdata){
       ftp_put_ls(mdata);
       break;
     case CMD_CD:
+      printf("receive cd command\n");
       return ftp_put_cd(get_para(mdata->cmd, 3), mdata);
       break;
     case CMD_PUT:

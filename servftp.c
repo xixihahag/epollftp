@@ -43,6 +43,8 @@ int ftp_put_ls(data *mdata){
 
   // printf("this is ls\n");
   char *current_path = mdata->current_path;
+  // printf("current_path = %s\n", current_path);
+
   init();
   // int num = 0;
   if( (dp = opendir(current_path)) != NULL){
@@ -67,7 +69,7 @@ int ftp_put_ls(data *mdata){
 
 int ftp_put_cd(char *para, data *mdata){
 
-  // printf("para = %s\n", para);
+  printf("para = %s\n", para);
   char *current_path = mdata->current_path;
   char temp[MAXLINE];
   int flag = 0;
@@ -75,7 +77,12 @@ int ftp_put_cd(char *para, data *mdata){
   // if( (strcmp(para, ".")) == 0)
   //   return 0;
   if( (strcmp(para, "..")) == 0){
+    printf("int strcmp\n");
+    printf("indeep = %d\n", indeep);
     if(indeep != 0){
+
+      // printf("deal\n");
+
       indeep--;
       memset(temp, 0, sizeof(temp));
       int i = strlen(current_path)-1;
@@ -112,9 +119,10 @@ int ftp_put_cd(char *para, data *mdata){
       return 1;
     }
   }
-  // printf("%s\n", current_path);
+  printf("%s\n", current_path);
   int num = 1;
   memcpy(mdata->rebuf, &num, sizeof(int));
+  mdata->indeep = indeep;
   return 1;
 }
 

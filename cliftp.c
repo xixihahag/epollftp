@@ -30,15 +30,15 @@ int ftp_get_ls(int sockfd){
   write(sockfd, "ls", sizeof("ls"));
 
   // printf("ready for read\n");
-
   if( (n = read(sockfd, buf, MAXLINE)) >= 0){
     // printf("read success, ready for write\n");
     write(fileno(stdout), buf, sizeof(buf));
     // printf("write success\n");
   }
-  if(n < 0)
+  else if(n < 0)
     return err("ftp_get_ls error\n");
 
+  // printf("read finished\n");
   // printf("return ftp_get_ls\n");
 }
 

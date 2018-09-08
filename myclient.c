@@ -5,7 +5,7 @@ int main(int argc, char **argv) {
   char buf[MAXLINE];
   int cmd, end = 0;
 
-  sockfd = network_init(CLIENT, argv[1]);
+  sockfd = network_init(CLIENT, argv[1], FALSE);
 
   for(;;){
     if(end == 1)
