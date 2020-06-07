@@ -1,3 +1,6 @@
+#ifndef __MY_UNP_H__
+#define __MY_UNP_H__
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -33,7 +36,9 @@
 #define CMDSIZE 1024
 
 int network_init(int, char *, int);
-size_t Read(int, void*, size_t);
-void Write(int, void*, size_t);
-int Accept(int, SA*, socklen_t*);
+size_t Read(int, void *, size_t);
+void Write(int, void *, size_t);
+int Accept(int, SA *, socklen_t *);
 int setnonblocking(int);
+
+#endif

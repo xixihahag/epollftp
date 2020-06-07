@@ -138,3 +138,15 @@ tips：自己用的时候要将ftp默认路径改成自己的，位置在myserve
     ```
 
     单纯的退出指令，只退出客户端。
+
+
+
+* 食用方法
+
+```c++
+mkdir build && cd build
+cmake .. && make
+./server
+./client server_ip
+```
+

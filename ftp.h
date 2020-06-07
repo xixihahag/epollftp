@@ -1,3 +1,6 @@
+#ifndef __FTP_H__
+#define __FTP_H__
+
 #include "data.h"
 #include "my_unp.h"
 
@@ -12,16 +15,18 @@
 
 int ftp_get_help(int);
 int ftp_get_ls(int);
-int ftp_get_cd(int, char*);
-int ftp_get_put(int ,char*);
-int ftp_get_get(int, char*);
+int ftp_get_cd(int, char *);
+int ftp_get_put(int, char *);
+int ftp_get_get(int, char *);
 int ftp_get_quit(int);
 
-int ftp_put_help(data*);
-int ftp_put_ls(data*);
-int ftp_put_cd(char*, data*);
-int ftp_put_put(char*, data*);
-int ftp_put_get(char*, data*);
+int ftp_put_help(data *);
+int ftp_put_ls(data *);
+int ftp_put_cd(char *, data *);
+int ftp_put_put(char *, data *);
+int ftp_put_get(char *, data *);
 
 void show_help();
 void init();
+
+#endif
